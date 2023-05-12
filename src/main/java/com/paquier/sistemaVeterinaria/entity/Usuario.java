@@ -1,15 +1,28 @@
-package com.paquier.sistemaVeterinaria.dto;
+package com.paquier.sistemaVeterinaria.entity;
 
-public class UsuarioDto {
+import javax.persistence.*;
+
+@Table(name = "usuarios")
+@Entity
+public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
     private String tipo;
+
+    @Column(nullable = false, unique = true)
     private String login;
+
+    @Column(nullable = false)
     private String contra;
 
-    public UsuarioDto() {
+    public Usuario() {
     }
 
-    public UsuarioDto(long id, String tipo, String login, String contra) {
+    public Usuario(long id, String tipo, String login, String contra) {
         this.id = id;
         this.tipo = tipo;
         this.login = login;
