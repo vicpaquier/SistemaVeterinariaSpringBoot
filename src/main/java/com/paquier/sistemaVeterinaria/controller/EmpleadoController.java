@@ -90,5 +90,14 @@ public class EmpleadoController {
         return new ResponseEntity<>(empleadoResponse, HttpStatus.OK);
     }
 
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarEmpleado(@PathVariable("id") Long id){
+        if(!empleadoService.existeEmpleado(id)){
+            return new ResponseEntity<>(new Mensaje("El empleado con id "+ id +" no existe"), HttpStatus.NOT_MODIFIED);
+        }
+        empleadoService.eliminar(id);
+        return new ResponseEntity<>(new Mensaje("Eliminado correctamente"), HttpStatus.OK);
+    }
+
 
 }
