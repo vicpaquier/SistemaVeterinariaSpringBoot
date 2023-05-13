@@ -19,6 +19,9 @@ public class Usuario {
     @Column(nullable = false)
     private String contra;
 
+    @ManyToOne
+    private Empleado empleado;
+
     public Usuario() {
     }
 
