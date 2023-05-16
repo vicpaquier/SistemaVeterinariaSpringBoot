@@ -7,12 +7,11 @@ import com.paquier.sistemaVeterinaria.service.ServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("api/v1/servicio")
 public class ServicioController {
     @Autowired
