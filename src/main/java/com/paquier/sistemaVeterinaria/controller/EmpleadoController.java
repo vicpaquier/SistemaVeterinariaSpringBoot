@@ -26,7 +26,7 @@ public class EmpleadoController {
 
     @GetMapping("/detalle/{id}")
     public ResponseEntity<EmpleadoDto> obtenerPorId(@PathVariable("id") Long id) {
-        if(!empleadoService.existeEmpleado(id)){
+        if(!empleadoService.existePorId(id)){
             return new ResponseEntity(new Mensaje("No se encontro ningun empleado con Id "+id),HttpStatus.NOT_FOUND);
         }
         Empleado empleado = empleadoService.obtenerPorId(id).get();
@@ -60,9 +60,9 @@ public class EmpleadoController {
 
     //TODO: validar campos vacíos
     @PostMapping("/crear")
-    public ResponseEntity<?> crearEmpleado(@RequestBody EmpleadoDto empleadoDto){
+    public ResponseEntity<Empleado> crearEmpleado(@RequestBody EmpleadoDto empleadoDto){
         if(empleadoService.existePorRuc(empleadoDto.getRuc())){
-            return new ResponseEntity<>(new Mensaje("Ya existe un empleado con Ruc "+empleadoDto.getRuc()), HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity(new Mensaje("Ya existe un empleado con Ruc "+empleadoDto.getRuc()), HttpStatus.NOT_ACCEPTABLE);
         }
         Empleado empleadoResponse = new Empleado();
         empleadoResponse.setNombre(empleadoDto.getNombre());
@@ -70,7 +70,7 @@ public class EmpleadoController {
         empleadoResponse.setCelular(empleadoDto.getCelular());
         empleadoResponse.setRuc(empleadoDto.getRuc());
 
-        empleadoService.crearEmpleado(empleadoResponse);
+        empleadoService.crear(empleadoResponse);
 
         return new ResponseEntity<>(empleadoResponse, HttpStatus.CREATED);
     }
@@ -85,14 +85,14 @@ public class EmpleadoController {
         empleadoResponse.setCelular(empleadoDto.getCelular());
         empleadoResponse.setRuc(empleadoDto.getRuc());
 
-        empleadoService.crearEmpleado(empleadoResponse);
+        empleadoService.crear(empleadoResponse);
 
         return new ResponseEntity<>(empleadoResponse, HttpStatus.OK);
     }
 
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarEmpleado(@PathVariable("id") Long id){
-        if(!empleadoService.existeEmpleado(id)){
+        if(!empleadoService.existePorId(id)){
             return new ResponseEntity<>(new Mensaje("El empleado con id "+ id +" no existe"), HttpStatus.NOT_MODIFIED);
         }
         empleadoService.eliminar(id);

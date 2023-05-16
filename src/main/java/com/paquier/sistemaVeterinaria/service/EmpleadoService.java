@@ -11,13 +11,13 @@ import java.util.Optional;
 @Service
 public class EmpleadoService {
     @Autowired
-    EmpleadoRepository empleadoRepository;
+    private EmpleadoRepository empleadoRepository;
 
     public List<Empleado> obtenerTodos(){
         return empleadoRepository.findAll();
     }
 
-    public void crearEmpleado(Empleado empleado){
+    public void crear(Empleado empleado){
         empleadoRepository.save(empleado);
     }
 
@@ -37,9 +37,8 @@ public class EmpleadoService {
         return empleadoRepository.existsByRuc(ruc);
     }
 
-    public boolean existeEmpleado(Long id){
+    public boolean existePorId(Long id){
         return empleadoRepository.existsById(id);
     }
-
 
 }
