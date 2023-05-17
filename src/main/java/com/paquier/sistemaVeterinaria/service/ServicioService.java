@@ -1,6 +1,5 @@
 package com.paquier.sistemaVeterinaria.service;
 
-import com.paquier.sistemaVeterinaria.entity.Empleado;
 import com.paquier.sistemaVeterinaria.entity.Servicio;
 import com.paquier.sistemaVeterinaria.repository.ServicioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

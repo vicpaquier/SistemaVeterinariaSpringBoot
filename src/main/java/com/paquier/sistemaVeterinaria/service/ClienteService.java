@@ -4,6 +4,7 @@ import com.paquier.sistemaVeterinaria.entity.Cliente;
 import com.paquier.sistemaVeterinaria.entity.Empleado;
 import com.paquier.sistemaVeterinaria.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.core.CrudMethods;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

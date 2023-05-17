@@ -25,11 +25,12 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(long id, String tipo, String login, String contra) {
-        this.idUsuario = id;
+    public Usuario(long idUsuario, String tipo, String login, String contra, Empleado empleado) {
+        this.idUsuario = idUsuario;
         this.tipo = tipo;
         this.login = login;
         this.contra = contra;
+        this.empleado = empleado;
     }
 
     public long getIdUsuario() {
@@ -62,5 +63,13 @@ public class Usuario {
 
     public void setContra(String contra) {
         this.contra = contra;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }
