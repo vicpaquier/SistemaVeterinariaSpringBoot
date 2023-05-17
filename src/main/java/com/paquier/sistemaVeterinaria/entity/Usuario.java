@@ -8,7 +8,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long idUsuario;
 
     @Column(nullable = false)
     private String tipo;
@@ -26,18 +26,18 @@ public class Usuario {
     }
 
     public Usuario(long id, String tipo, String login, String contra) {
-        this.id = id;
+        this.idUsuario = id;
         this.tipo = tipo;
         this.login = login;
         this.contra = contra;
     }
 
-    public long getId() {
-        return id;
+    public long getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getTipo() {

@@ -1,10 +1,9 @@
 package com.paquier.sistemaVeterinaria.repository;
 
-import com.paquier.sistemaVeterinaria.entity.Usuario;
+import com.paquier.sistemaVeterinaria.entity.Servicio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
+public interface ServicioRepository extends JpaRepository<Servicio, Long> {
 }
