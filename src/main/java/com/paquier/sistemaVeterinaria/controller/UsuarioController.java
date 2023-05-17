@@ -39,7 +39,7 @@ public class UsuarioController {
         responseUsuario.setTipo(usuario.getTipo());
         responseUsuario.setIdUsuario(usuario.getIdUsuario());
         responseUsuario.setEmpleado((usuario.getEmpleado()));
-        
+
         return new ResponseEntity<>(responseUsuario, HttpStatus.OK);
     }
 

@@ -1,7 +1,6 @@
 package com.paquier.sistemaVeterinaria.repository;
 
 import com.paquier.sistemaVeterinaria.entity.Cliente;
-import com.paquier.sistemaVeterinaria.entity.Empleado;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
