@@ -1,23 +1,19 @@
-package com.paquier.sistemaVeterinaria.entity;
+package com.paquier.sistemaVeterinaria.dto;
 
-import javax.persistence.*;
+import com.paquier.sistemaVeterinaria.entity.Facturacion;
+import com.paquier.sistemaVeterinaria.entity.Servicio;
 
-@Entity
-public class DetalleFacturacion {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class DetalleFacturacionDto {
     private long idDetalleFacturacion;
-    @Column(nullable = false)
     private int cantidad;
-    @ManyToOne
     private Servicio servicio;
-    @ManyToOne
     private Facturacion facturacion;
 
-    public DetalleFacturacion() {
+    public DetalleFacturacionDto() {
     }
 
-    public DetalleFacturacion(long idDetalleFacturacion, int cantidad, Servicio servicio, Facturacion facturacion) {
+    public DetalleFacturacionDto(long idDetalleFacturacion, int cantidad, Servicio servicio, Facturacion facturacion) {
         this.idDetalleFacturacion = idDetalleFacturacion;
         this.cantidad = cantidad;
         this.servicio = servicio;

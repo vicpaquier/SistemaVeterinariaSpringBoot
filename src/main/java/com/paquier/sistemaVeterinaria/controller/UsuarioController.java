@@ -44,7 +44,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<Usuario> crear(@RequestBody Usuario usuarioDto){
+    public ResponseEntity<Usuario> crear(@RequestBody UsuarioDto usuarioDto){
         if(usuarioService.existePorLogin(usuarioDto.getLogin())){
             return new ResponseEntity(new Mensaje("Ya existe el usuario "+usuarioDto.getLogin()), HttpStatus.BAD_REQUEST);
         }
@@ -56,6 +56,7 @@ public class UsuarioController {
         responseUsuario.setContra(usuarioDto.getContra());
         responseUsuario.setTipo(usuarioDto.getTipo());
         responseUsuario.setEmpleado(usuarioDto.getEmpleado());
+
         responseUsuario = usuarioService.crear(responseUsuario);
 
         return new ResponseEntity<>(responseUsuario, HttpStatus.CREATED);
