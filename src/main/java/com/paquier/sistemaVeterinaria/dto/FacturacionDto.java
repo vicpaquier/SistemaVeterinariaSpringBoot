@@ -1,30 +1,23 @@
-package com.paquier.sistemaVeterinaria.entity;
+package com.paquier.sistemaVeterinaria.dto;
 
-import javax.persistence.*;
+import com.paquier.sistemaVeterinaria.entity.Cliente;
+import com.paquier.sistemaVeterinaria.entity.Usuario;
+
 import java.time.LocalDateTime;
 
-@Entity
-public class Facturacion {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class FacturacionDto {
     private long idFacturacion;
-    @Column(nullable = false)
     private String condicion;
-    @Column(nullable = false)
     private LocalDateTime fecha;
-    @Column(nullable = false)
     private String numero;
-    @Column(nullable = false)
     private String estado;
-    @ManyToOne
     private Usuario usuario;
-    @ManyToOne
     private Cliente cliente;
 
-    public Facturacion() {
+    public FacturacionDto() {
     }
 
-    public Facturacion(long idFacturacion, String condicion, LocalDateTime fecha, String numero, String estado, Usuario usuario, Cliente cliente) {
+    public FacturacionDto(long idFacturacion, String condicion, LocalDateTime fecha, String numero, String estado, Usuario usuario, Cliente cliente) {
         this.idFacturacion = idFacturacion;
         this.condicion = condicion;
         this.fecha = fecha;
