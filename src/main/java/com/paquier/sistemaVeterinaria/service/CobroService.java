@@ -28,4 +28,6 @@ public class CobroService {
     public void eliminar(Long id){
         this.cobroRepository.deleteById(id);
     }
+
+    public boolean existePorId(Long id){ return this.cobroRepository.existsById(id);}
 }
