@@ -16,6 +16,8 @@ public class Cliente {
     private String ruc;
     private String celular;
 
+    private String foto;
+
     public Cliente() {
     }
 
@@ -65,5 +67,13 @@ public class Cliente {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }
